@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EF1003 Term Projects - Your Name</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+            background-color: #f5f5f7;
+            color: #222;
+        }
+        header {
+            background: #111827;
+            color: #f9fafb;
+            padding: 20px 16px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0 0 8px 0;
+            font-size: 1.6rem;
+        }
+        header p {
+            margin: 0;
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
+        nav {
+            background: #1f2933;
+            padding: 8px 16px;
+            text-align: center;
+        }
+        nav a {
+            color: #e5e7eb;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.95rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            max-width: 1000px;
+            margin: 24px auto 40px auto;
+            padding: 0 16px;
+        }
+        section {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 20px 18px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
+        }
+        h2 {
+            margin-top: 0;
+            font-size: 1.3rem;
+            color: #111827;
+        }
+        h3 {
+            margin-bottom: 6px;
+            margin-top: 16px;
+            font-size: 1.05rem;
+            color: #111827;
+        }
+        p {
+            margin: 4px 0 8px 0;
+            font-size: 0.95rem;
+        }
+        ul {
+            margin: 4px 0 8px 18px;
+            padding: 0;
+            font-size: 0.95rem;
+        }
+        li {
+            margin-bottom: 4px;
+        }
+        .tagline {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #6b7280;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>EF1003 Data Literacy Projects</h1>
+    <p class="tagline">Poster & Webpage Summary – Your Name, KENTECH</p>
+</header>
+
+<nav>
+    <a href="#project1">Project 1 (Text Data)</a>
+    <a href="#project2">Project 2 (Image Data)</a>
+</nav>
+
+<main>
+
+    <!-- ================== PROJECT 1 ================== -->
+    <section id="project1">
+        <h2>Project 1 – Text Data: Social Media and Mental Health</h2>
+
+        <h3>Motivation & Research Question</h3>
+        <p>
+            Social media platforms contain large amounts of text that reflect users’ feelings and stress.
+            Understanding textual patterns related to mental health can help identify risk factors at a population level.
+        </p>
+        <p>
+            <strong>Research Question:</strong>
+            What textual features in social media posts are associated with negative emotional or mental-health-related content?
+        </p>
+
+        <h3>Dataset & Preprocessing</h3>
+        <ul>
+            <li>Collected text posts from a public dataset (e.g., social media or mental-health-related text).</li>
+            <li>Cleaned text by lowercasing, removing punctuation, and deleting stopwords.</li>
+            <li>Applied tokenization and calculated basic statistics such as word frequency and sentence length.</li>
+        </ul>
+
+        <h3>Methods</h3>
+        <ul>
+            <li>Computed sentiment scores for each post and extracted keywords related to stress, anxiety, or depression.</li>
+            <li>Grouped posts into negative vs. non-negative categories using sentiment scores or keyword rules.</li>
+            <li>Visualized distributions of sentiment and frequent keywords using bar charts and simple plots.</li>
+        </ul>
+
+        <h3>Key Results</h3>
+        <ul>
+            <li>Negative posts contained higher frequencies of mental-health-related keywords than non-negative posts.</li>
+            <li>Certain words (e.g., “tired”, “alone”, “anxious”) appeared much more often in negative posts.</li>
+            <li>Text-based indicators can highlight emotional states but do not directly represent clinical diagnoses.</li>
+        </ul>
+
+        <h3>Discussion & Limitations</h3>
+        <ul>
+            <li>Keyword- and sentiment-based methods are simple and can miss sarcasm, slang, and cultural context.</li>
+            <li>The dataset and labels may contain noise, and results cannot be generalized to all users or platforms.</li>
+        </ul>
+
+        <h3>Future Work & Impact</h3>
+        <ul>
+            <li>Combine basic text features with more advanced NLP models to capture subtle emotional cues.</li>
+            <li>Explore temporal patterns (posting time, frequency) to better understand changes in emotional states.</li>
+            <li>Insights may support large-scale mental health awareness but should not be used as diagnostic tools.</li>
+        </ul>
+    </section>
+
+    <!-- ================== PROJECT 2 ================== -->
+    <section id="project2">
+        <h2>Project 2 – Image Data: Visual Emotional Tone of Memes</h2>
+
+        <h3>Motivation & Research Question</h3>
+        <p>
+            Memes are a popular way to express emotions on social media, including self-deprecating jokes and negative humor.
+            These visual posts may reflect underlying stress or psychological struggles at a population level.
+        </p>
+        <p>
+            <strong>Research Question:</strong>
+            Are there systematic differences in visual tone (brightness, saturation, colorfulness)
+            between positive, neutral, and negative memes?
+        </p>
+
+        <h3>Dataset & Cleaning</h3>
+        <ul>
+            <li>Used the <em>6992 Meme Images Dataset with Labels</em> from Kaggle.</li>
+            <li>Each image has a sentiment label (very_positive, positive, neutral, negative, very_negative).</li>
+            <li>Merged labels into three classes: positive, neutral, negative and removed invalid or missing entries.</li>
+            <li>Matched each label with its image file path and skipped unreadable or missing images.</li>
+        </ul>
+
+        <h3>Methods</h3>
+        <ul>
+            <li>Loaded meme images and converted them to HSV color space using Python and OpenCV.</li>
+            <li>Extracted three global visual features:
+                <ul>
+                    <li><strong>Brightness</strong> – mean of the Value (V) channel</li>
+                    <li><strong>Saturation</strong> – mean of the Saturation (S) channel</li>
+                    <li><strong>Colorfulness</strong> – numeric score based on RGB channel differences</li>
+                </ul>
+            </li>
+            <li>Built a feature dataset for a random sample of about 1500 memes.</li>
+            <li>Compared feature distributions using boxplots and a brightness–colorfulness scatter plot.</li>
+        </ul>
+
+        <h3>Key Results</h3>
+        <ul>
+            <li>Neutral and positive memes are only slightly brighter on average than negative memes.</li>
+            <li>Brightness, saturation, and colorfulness distributions overlap strongly across all three sentiments.</li>
+            <li>The brightness–colorfulness scatter plot shows a positive correlation, but sentiment classes are mixed.</li>
+            <li>Overall, simple global visual features do not clearly separate positive, neutral, and negative memes.</li>
+        </ul>
+
+        <h3>Discussion</h3>
+        <ul>
+            <li>Visual tone alone is not a strong marker of sentiment in this meme dataset.</li>
+            <li>Many memes express emotion mainly through text, irony, and cultural context rather than color.</li>
+            <li>Color-based features are better interpreted as a rough proxy for emotional tone, not as a diagnostic signal.</li>
+        </ul>
+
+        <h3>Limitations & Future Work</h3>
+        <ul>
+            <li>Limitations: used only simple global color features; ignored meme text and real mental health data.</li>
+            <li>Future work: combine image features with meme text in a multimodal model and link them to survey-based mental health indicators.</li>
+        </ul>
+    </section>
+
+</main>
+
+<footer>
+    EF1003 Data Literacy – Term Projects · KENTECH
+</footer>
+</body>
+</html>
